@@ -11,7 +11,7 @@
     --ancho_maximo: 1200px;
     --padding_izquierda_derecha: 20px;
     --padding_arriba_abajo: 100px;
-    --altura_header: 80px;
+    --altura_header: 60px;
     /* TAMAÑOS DE FUENTE */
     --titulo_h1: clamp(1rem, 7vw, 2.6rem);
     --titulos_h2: clamp(1.2rem, 5.6vw, 2rem);
@@ -38,7 +38,7 @@ html {
 body {
     font-family: "Raleway", sans-serif;
     min-height: 100%;
-    background-color: var(--color_negro);
+    background-color: var(--color_negro); 
 }
 
 /* ESTILOS GLOBALES COMPARTIDOS */
@@ -61,3 +61,329 @@ body {
     width: min(100%, var(--ancho_maximo));
     padding: var(--padding_arriba_abajo) var(--padding_izquierda_derecha);
 }
+.titulo_secciones{
+    font-size: var(--titulos_h2);
+    color: var(--color_primario);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/*Navar*/
+.header {
+    width: 100%;
+}
+.barra_navegacion {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: min(100% var(--ancho_maximo));
+    padding: 0 var(--padding_izquierda_derecha);
+    height: var(--altura_header);
+}
+.barra_navegacion h1{
+    font-size: var(--titulo_h1);
+    color: var(--color_primario);
+}
+.icon_burger{
+    font-size: 30px;
+    color: var(--color_blanco);
+    
+    position: fixed;
+    z-index: 10;
+    top: 9px;
+    right: 20px;
+
+}
+.icono_hamburguesa {
+    display: none;
+}
+
+.icono_hamburguesa:checked + .ul_links_nav{
+    height: 100vh;
+}
+.ul_links_nav {
+    background-color: rgba(0, 0, 0, 0.574);
+    width: 100%;
+
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 0;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: height .4s ease;
+}
+.li_links_nav {
+}
+.link_nav {
+    color: var(--color_blanco);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/*SECCION PRINCIPAL*/
+.seccion_principal {
+}
+.seccion_principal_Article {
+    text-align: center;
+}
+.seccion_principal_h2 {
+    color: var(--color_primario);
+    font-size: var(--titulos_h2);
+}
+.seccion_principal_h3 {
+    font-size: var(--subtitulo_seccion_principal);
+    color: var(--color_blanco);
+}
+.seccion_principal_p {
+    font-size: var(--parrafo_seccion_principal);
+    color: var(--color_blanco);
+    margin: 15px 0;
+}
+.btn_contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.boton {
+    background-color: var(--color_primario);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    color: var(--color_negro);
+}
+.img_principal{
+    width: 100%;
+    display: none;
+}
+
+/*SECCION SOBREMI*/
+.seccion_sobreMi {
+    background-color: var(--color_secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.estilo_secciones_globales {
+}
+.parrafo_sobreMi {
+    color: var(--color_blanco);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.imagen_sobreMi {
+    width: 100%;
+    max-width: 350px;
+}
+
+/*SECCION HABILIDADES*/
+.contenedor_habilidades {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    text-align: center;
+}
+.contenedor_habilidad {
+    background-color: var(--color_secundario);
+    padding: 30px 0;
+}
+.tecnologia_icono {
+    width: 50%;
+    max-width: 350px;
+}
+
+/*SECCION PROYECTOS*/
+.contenedor_proyectos{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+.contenedor_proyecto {
+    background-color: var(--color_secundario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor_proyecto p {
+    color: var(--color_blanco);
+    width: 80%;
+    max-width: 330px;
+    text-align: center;
+
+}
+.titulos_h3 {
+    text-align: center;
+}
+.imagen_proyecto{
+    width: 100%;
+    max-width: 300px;
+}
+/*FORMULARIO*/
+.mt-5 {
+}
+.form-container {
+    background-color: var(--color_secundario);
+    color: var(--color_primario);
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 4px;
+    
+}
+
+#contactForm{
+    width: 70%;
+}
+
+.form-label {
+    
+}
+.form-control {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.invalid-feedback {
+    
+}
+.btn {
+    
+}
+.btn-primary {
+    
+}
+
+
+
+
+
+/*DISPOSITIVOS ESCRITORIO*/
+@media(min-width: 768px){
+    .contenedor_proyectos{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .seccion_sobreMi {
+        flex-direction: row;
+    }
+
+/*BARRA DE NAVEGACIÓN*/
+    .barra_navegacion {
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .icon_burger{
+       display: none;
+    }
+    .icono_hamburguesa {
+        display: none;
+    }
+    .ul_links_nav {
+        background-color: transparent;
+        width: auto;
+        position: static;
+        height: auto;
+    
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        transition: height .4s ease;
+    }
+    .li_links_nav {
+    }
+    .link_nav {
+        color: var(--color_blanco);
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+@media(max-width: 768px){
+    .contenedor_habilidades {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contenedor_proyectos{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .img_principal{
+        visibility: hidden;
+    }
+}
+
+/*SECCION PRINCIPAL*/
+.seccion_principal {
+    display: flex;
+    justify-content: space-around;
+}
+.seccion_principale_Article {
+    text-align: initial;
+    width: 51%;
+}
+.btn_contenedor {
+    justify-content: center;
+    gap: 15px;
+}
+.boton {
+    background-color: var(--color_primario);
+    font-size: 1.4rem;
+    padding: 7px 17px;
+    color: var(--color_negro);
+}
+.img_principal{
+    width: 40%;
+    display: block;
+    max-width: 350px;
+    max-height: 270px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*SECCION SOBREMI*/
+.article_sobreMi{
+    height: 100%;
+}
+.seccion_sobreMi {
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+.parrafo_sobreMi{
+    max-width: 400px;
+}
+/*SECCION HABILIDADES*/
+/*.contenedor_habilidades {
+    flex-direction: row;
+    gap: 20px;
+}*/
+.contenedor_habilidad {
+    height: 250px;
+}
+
+/*SECCION PROYECTOS*/
+/*.contenedor_proyectos{
+    flex-direction: row;
+    justify-content: space-evenly;
+}*/
+
+.imagen_proyecto{
+    width: 100%;
+    max-width: 300px;
+}
+
+
